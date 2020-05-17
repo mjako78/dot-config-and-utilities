@@ -1,0 +1,54 @@
+### LS aliases
+alias lt='ls -l -t -h'
+
+### APT-GET aliases
+alias alu='apt list --upgradable'
+alias acs='apt search'
+alias acw='apt show'
+alias agu='sudo apt update'
+alias agg='sudo apt upgrade'
+alias aggdist='sudo apt dist-upgrade'
+alias agi='sudo apt install'
+alias aga='sudo apt autoremove'
+alias agc='sudo apt clean'
+alias agr='sudo apt remove'
+alias agp='sudo apt remove --purge'
+
+### Show directories tree
+alias treed='tree -d'
+alias treex='tree --prune -I'
+
+### Remove packages marked as rc by dpkg
+alias purgerc='dpkg --list | grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge'
+
+### Remove packages showed as orpahned by deborphan
+alias purgeorph='sudo apt remove --purge $(deborphan)'
+
+### Tmuxinator shortcut
+alias mux='tmuxinator'
+
+### Aliases for rails commands via docker
+alias dcr='docker-compose run --rm web'
+# Migrate both development and test environments
+alias dcr-mig='docker-compose run --rm web rails db:migrate db:test:prepare'
+alias dcr-spec='docker-compose run -e "RAILS_ENV=test" --rm web bundle exec rspec'
+alias dcr-cl='docker-compose run --rm web rake log:clear'
+
+### Other aliases for docker
+alias dclft='docker-compose logs -f --tail=50'
+
+### Other alias for git
+alias ggrh='git reset --hard origin/$(current_branch)'
+alias 'ggpushf!'='git push --force-with-lease origin $(current-branch)'
+alias grbiom='git rebase --interactive origin/master'
+# Show history of a single file; usage glff <path/of/file>
+alias glff='git log --follow -p --'
+
+### Reload zshrc
+alias zshrc='source $HOME/.zshrc'
+
+### Use wget with tor
+alias tget='torsocks wget'
+
+### Shortcut to common used directories
+alias proj='cd $HOME/Projects'
