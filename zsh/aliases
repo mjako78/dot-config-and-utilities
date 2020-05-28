@@ -50,5 +50,8 @@ alias zshrc='source $HOME/.zshrc'
 ### Use wget with tor
 alias tget='torsocks wget'
 
+### Show $PATH nicely formatted and sorted
+alias path='tr ":" "\n" <<< "$PATH" | sort'
+
 ### Shortcut to common used directories
 alias proj='cd $HOME/Projects'

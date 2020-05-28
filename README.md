@@ -28,3 +28,11 @@ Must be placed on `$HOME/.oh-my-zsh/custom`.
 
 This is a configuration file for sass linter.
 This file must be renamed to `.sass-lint.yml` and placed on root directory of project that use sass.
+
+## bin
+Utility scripts.
+
+**- todayfiles.sh**
+
+This is a bash script which list all files modified today in a given directory if provided as arguments
+(otherwise current directory), recursively.
