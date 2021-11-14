@@ -1,0 +1,77 @@
+set nocompatible
+filetype off
+set number
+set encoding=utf-8
+syntax on
+
+" Setup and initialize Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+" Add needed plugin
+" Plugin 'preservim/nerdtree'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+" End Vundle
+call vundle#end()
+
+filetype plugin indent on
+
+" Split panes
+set splitbelow
+set splitright
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Folding
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+let g:SimpylFold_docstring_preview=1
+
+" Color schemes
+if has('gui_running')
+    set background=dark
+    colorscheme solarized
+else
+    colorscheme zenburn
+endif
+call togglebg#map("<F5>")
+
+" Autocomplete
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Python stuff
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+au BufNewFile,BufRead *.py, *.pyw, *.c, *.h match BadWhitespace /\s\+$/
+let python_highlight_all=1
+let NERDTreeIgnore=['\.pyc$', '\~$']
+
+" Other dev stuff
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
+" Yaml stuff
+autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab

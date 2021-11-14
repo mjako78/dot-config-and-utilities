@@ -26,7 +26,7 @@ Must be placed on `$HOME/.oh-my-zsh/custom`.
 
 **- _sass-lint.yml**
 
-This is a configuration file for sass linter.
+This is a configuration file for sass linter.  
 This file must be renamed to `.sass-lint.yml` and placed on root directory of project that use sass.
 
 ## bin
@@ -36,3 +36,26 @@ Utility scripts.
 
 This is a bash script which list all files modified today in a given directory if provided as arguments
 (otherwise current directory), recursively.
+
+## vim
+Vim configuration & related stuffs
+
+**- _vimrc**
+
+This is main vim configuration settings.  
+This file must be renamed to `.vimrc` and placed on `$HOME` directory.
+
+### vim/syntax
+This directory contains custom syntax files.  
+Custom syntax files are useful when we have a file with a common extension,
+such as *txt*, but with a *special format* for some kind of app.  
+This directory must be renamed to `.vim/syntax` and placed on `$HOME` directory, with all included files.  
+More information:
+- https://vim.fandom.com/wiki/Creating_your_own_syntax_files
+- https://vim.fandom.com/wiki/Modeline_magic
+
+**- jrnl.vim**
+
+This is a custom syntax file for working with **jrnl** entries.  
+More information on jrnl:
+- https://jrnl.sh/en/stable/
