@@ -37,6 +37,10 @@ Utility scripts.
 This is a bash script which list all files modified today in a given directory if provided as arguments
 (otherwise current directory), recursively.
 
+**- seeyouspacecowboy.sh**
+
+Print a quote from Cowboy Bebop on terminal, colored.
+
 ## vim
 Vim configuration & related stuffs
 
