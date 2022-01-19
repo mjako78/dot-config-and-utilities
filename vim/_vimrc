@@ -22,6 +22,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " End Vundle
 call vundle#end()
 
@@ -44,9 +47,9 @@ let g:SimpylFold_docstring_preview=1
 " Color schemes
 if has('gui_running')
     set background=dark
-    colorscheme solarized
+    colorscheme nord
 else
-    colorscheme zenburn
+    colorscheme nord
 endif
 call togglebg#map("<F5>")
 
