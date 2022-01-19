@@ -41,6 +41,10 @@ This is a bash script which list all files modified today in a given directory i
 
 Print a quote from Cowboy Bebop on terminal, colored.
 
+**- fortune.sh**
+
+Print a funny fortune quote, with cowsay and lolcat.
+
 ## vim
 Vim configuration & related stuffs
 
