@@ -43,6 +43,14 @@ alias 'ggpushf!'='git push --force-with-lease origin $(current-branch)'
 alias grbiom='git rebase --interactive origin/master'
 # Show history of a single file; usage glff <path/of/file>
 alias glff='git log --follow -p --'
+# git flow manage bugfix branches
+alias gflb='git flow bugfix'
+alias gflbs='git flow bugfix start'
+alias gflbf='git flow bugfix finish'
+alias gflbp='git flow bugfix publish'
+alias gflbpll='git flow bugfix pull'
+alias gflbfc='git flow bugfix finish ${$(git_current_branch)#bugfix/}'
+alias gflbpc='git flow bugfix publish ${$(git_current_branch)#bugfix/}'
 
 ### Reload zshrc
 alias zshrc='source $HOME/.zshrc'
