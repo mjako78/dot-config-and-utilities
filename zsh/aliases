@@ -14,6 +14,9 @@ alias agc='sudo apt clean'
 alias agr='sudo apt remove'
 alias agp='sudo apt remove --purge'
 
+### DPKG aliases
+alias dpkgi='sudo dpkg -i'
+
 ### Show directories tree
 alias treed='tree -d'
 alias treex='tree --prune -I'
@@ -63,3 +66,4 @@ alias path='tr ":" "\n" <<< "$PATH" | sort'
 
 ### Shortcut to common used directories
 alias proj='cd $HOME/Projects'
+alias devel='cd $HOME/devel'
