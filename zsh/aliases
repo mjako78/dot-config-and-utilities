@@ -67,3 +67,6 @@ alias path='tr ":" "\n" <<< "$PATH" | sort'
 ### Shortcut to common used directories
 alias proj='cd $HOME/Projects'
 alias devel='cd $HOME/devel'
+
+### Query cheat.sh for a range of linux commands
+alias cheat='_curl_cheat() { curl cheat.sh/"$1"; }; _curl_cheat'
