@@ -39,6 +39,7 @@ alias dcr-cl='docker-compose run --rm web rake log:clear'
 
 ### Other aliases for docker
 alias dclft='docker-compose logs -f --tail=50'
+alias dps='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Image}}" | (sed -u 1q; sort)'
 
 ### Other alias for git
 alias ggrh='git reset --hard origin/$(current_branch)'
@@ -63,6 +64,9 @@ alias tget='torsocks wget'
 
 ### Show $PATH nicely formatted and sorted
 alias path='tr ":" "\n" <<< "$PATH" | sort'
+
+### Show history with datetime ISO8601 format (zsh only!)
+alias history='history -i'
 
 ### Shortcut to common used directories
 alias proj='cd $HOME/Projects'
