@@ -75,3 +75,6 @@ alias devel='cd $HOME/devel'
 
 ### Query cheat.sh for a range of linux commands
 alias cheat='_curl_cheat() { curl cheat.sh/"$1"; }; _curl_cheat'
+
+### Print running services
+alias running_services='systemctl list-units --type=service --state=running'
