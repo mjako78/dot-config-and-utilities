@@ -41,6 +41,8 @@ alias dcr-cl='docker-compose run --rm web rake log:clear'
 alias dclft='docker-compose logs -f --tail=50'
 alias dps='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Image}}" | (sed -u 1q; sort)'
 alias dilss='docker images | (sed -u 1q; sort)'
+# Inspect network and get container name with IP
+function dnip() { echo "Containers in network $1"; docker network inspect --format '{{ json .Containers }}' $1 | jq --raw-output '.[] | "\(.IPv4Address) --> \(.Name)"'; }
 
 ### Other alias for git
 alias ggrh='git reset --hard origin/$(current_branch)'
