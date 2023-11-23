@@ -1,5 +1,6 @@
 ### LS aliases
 alias lt='ls -l -t -h'
+alias lth='ls -l -t -h | head'
 
 ### APT-GET aliases
 alias alu='apt list --upgradable'
