@@ -1,6 +1,6 @@
 ### LS aliases
 alias lt='ls -l -t -h'
-alias lth='ls -l -t -h | head'
+alias lth='ls -l -t -h --color | head'
 
 ### APT-GET aliases
 alias alu='apt list --upgradable'
@@ -14,6 +14,17 @@ alias aga='sudo apt autoremove'
 alias agc='sudo apt clean'
 alias agr='sudo apt remove'
 alias agp='sudo apt remove --purge'
+
+### NALA aliases (nala must be installed)
+alias nud='sudo nala update'
+alias nug='sudo nala upgrade'
+alias nc='sudo nala clean'
+alias ni='sudo nala install'
+alias nr='sudo nala remove'
+alias np='sudo nala purge'
+alias nlu='nala list --upgradable'
+alias ns='nala search'
+alias nw='nala show'
 
 ### DPKG aliases
 alias dpkgi='sudo dpkg -i'
@@ -39,8 +50,9 @@ alias dcr-spec='docker-compose run -e "RAILS_ENV=test" --rm web bundle exec rspe
 alias dcr-cl='docker-compose run --rm web rake log:clear'
 
 ### Other aliases for docker
-alias dclft='docker-compose logs -f --tail=50'
+alias dclft='docker compose logs -f --tail=50'
 alias dps='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Image}}" | (sed -u 1q; sort)'
+alias dpsup='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}\t{{.Image}}" | (sed -u 1q; sort)'
 alias dilss='docker images | (sed -u 1q; sort)'
 # Inspect network and get container name with IP
 function dnip() { echo "Containers in network $1"; docker network inspect --format '{{ json .Containers }}' $1 | jq --raw-output '.[] | "\(.IPv4Address) --> \(.Name)"'; }
