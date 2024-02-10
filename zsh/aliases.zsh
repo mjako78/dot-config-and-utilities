@@ -85,8 +85,8 @@ alias path='tr ":" "\n" <<< "$PATH" | sort'
 alias history='history -i'
 
 ### Shortcut to common used directories
-alias proj='cd $HOME/Projects'
-alias devel='cd $HOME/devel'
+alias proj='[ -d $HOME/Projects ] && (cd $HOME/Projects) || (echo "Directory $HOME/Projects not exists")'
+alias devel='[ -d $HOME/devel ] && (cd $HOME/devel) || (echo "Directory $HOME/devel not exists")'
 
 ### Query cheat.sh for a range of linux commands
 alias cheat='_curl_cheat() { curl cheat.sh/"$1"; }; _curl_cheat'
