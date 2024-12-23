@@ -14,6 +14,7 @@ alias aga='sudo apt autoremove'
 alias agc='sudo apt clean'
 alias agr='sudo apt remove'
 alias agp='sudo apt remove --purge'
+alias afi='sudo apt --fix-broken install'
 
 ### NALA aliases (nala must be installed)
 alias nud='sudo nala update'
