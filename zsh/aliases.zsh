@@ -35,7 +35,8 @@ alias treed='tree -d'
 alias treex='tree --prune -I'
 
 ### Remove packages marked as rc by dpkg
-alias purgerc='dpkg --list | grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge'
+# alias purgerc='dpkg --list | grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge'
+alias purgerc='sudo apt remove --purge $(dpkg -l | awk '\''/^rc/{print $2}'\'')'
 
 ### Remove packages showed as orpahned by deborphan
 alias purgeorph='sudo apt remove --purge $(deborphan)'
